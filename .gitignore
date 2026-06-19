@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Datasets / caches / checkpoints
+data/
+*.pt
+*.pth
+
+# OS
+.DS_Store
+Thumbs.db
