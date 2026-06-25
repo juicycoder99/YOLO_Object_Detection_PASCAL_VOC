@@ -1,4 +1,4 @@
-"""Evaluation helpers for the YOLO Final Exam: gather boxes for mAP and draw sample detections."""
+"""Evaluation helpers for the YOLO detector: gather boxes for mAP and draw sample detections."""
 import torch
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches

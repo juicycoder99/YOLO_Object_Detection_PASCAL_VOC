@@ -1,11 +1,9 @@
-# CS596 Final Exam — YOLO Object Detection on PASCAL VOC 2007
-
-Final exam for **CS596 – Special Topics on Deep Learning**, Bishop's University.
+# YOLO Object Detection on PASCAL VOC 2007
 
 A YOLO-v1 style object detector trained from scratch (head) on PASCAL VOC 2007, with a ResNet-50
-backbone pretrained on ImageNet. The core task is implementing the **YOLO loss**
+backbone pretrained on ImageNet. The implementation centres on the **YOLO loss**
 ([`yolo_loss.py`](yolo_loss.py)); the full pipeline (target encoding, decoding, NMS, mAP) is also
-implemented. The solution notebook is [`FinalExam_YOLO_VOC.ipynb`](FinalExam_YOLO_VOC.ipynb).
+implemented. The training notebook is [`yolo_object_detection.ipynb`](yolo_object_detection.ipynb).
 
 ## Method
 
@@ -27,25 +25,24 @@ implemented. The solution notebook is [`FinalExam_YOLO_VOC.ipynb`](FinalExam_YOL
 Final test loss **2.655**, final **mAP@0.5 = 0.324** on the VOC2007 test set. The detector localises
 common objects (person, car, cat, dog, …) well; the usual YOLO-v1 limitations show on small or
 clustered objects, since each grid cell commits to a single object. With more epochs and a finer
-schedule the mAP would climb further toward the ~0.5 range quoted in the brief; the figure here is
-the honest result of 40 epochs on a single GPU.
+schedule the mAP would climb further toward the ~0.5 range quoted in the original paper; the figure
+here is the honest result of 40 epochs on a single GPU.
 
 ## Code
 
 | File | Description |
 |------|-------------|
 | `yolo_model.py` | YOLO-v1 detector (ResNet-50 backbone + head) |
-| `yolo_loss.py` | The YOLO multi-part loss (core deliverable) |
+| `yolo_loss.py` | The YOLO multi-part loss (core implementation) |
 | `yolo_data.py` | VOC2007 → 448px images + 7×7 target grids |
 | `yolo_utils.py` | IoU, non-max suppression, mAP, cell decoding |
 | `yolo_eval.py` | mAP gathering and sample-detection drawing |
-| `FinalExam_YOLO_VOC.ipynb` | Training, evaluation, sample detections |
+| `yolo_object_detection.ipynb` | Training, evaluation, sample detections |
+| `PROJECT_BRIEF.pdf` | Project brief (goals, objectives, outcomes) |
 
 ## Running it
 
 ```bash
 pip install torch torchvision numpy matplotlib   # CUDA build of torch for GPU
-jupyter notebook FinalExam_YOLO_VOC.ipynb        # VOC2007 downloaded automatically
+jupyter notebook yolo_object_detection.ipynb     # VOC2007 downloaded automatically
 ```
-
-`Final Exam.pdf` is the assignment description.

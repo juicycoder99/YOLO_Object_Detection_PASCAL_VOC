@@ -1,4 +1,4 @@
-"""YOLO-v1 style detector for PASCAL VOC (Final Exam).
+"""YOLO-v1 style detector for PASCAL VOC.
 
 A ResNet-50 backbone (pretrained on ImageNet) feeds a small convolutional head that outputs an
 S x S x (B*5 + C) tensor, following the YOLO-v1 prediction format. A pretrained backbone is used so

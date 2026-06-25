@@ -1,4 +1,4 @@
-"""PASCAL VOC 2007 detection data for the YOLO Final Exam.
+"""PASCAL VOC 2007 detection data for the YOLO detector.
 
 Each image is resized to 448x448 (uint8). Each ground-truth box is encoded into an S x S x (C+5)
 target grid: C class one-hots followed by one box (conf, x, y, w, h), where x,y are relative to the

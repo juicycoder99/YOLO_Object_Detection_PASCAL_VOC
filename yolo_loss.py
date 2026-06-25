@@ -1,4 +1,4 @@
-"""YOLO-v1 loss function (Final Exam - the core implementation task).
+"""YOLO-v1 loss function (the core implementation).
 
 Implements the multi-part YOLO loss: localisation loss for the box responsible for each object
 (the predictor with the highest IoU), an object-confidence loss, a no-object confidence loss, and a
